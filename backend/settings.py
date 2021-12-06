@@ -39,18 +39,26 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Project dependencies
     'corsheaders',
     'django_filters',
     'rest_framework',
     'rest_framework_swagger',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'rest_framework.authtoken',
+    'rest_auth',
+
+    # Project apps
+    'academics',
     'blog',
     'employee',
     'users',
+    'student',
+    'hostel',
 
-    'rest_framework.authtoken',
-    'rest_auth',
+
+
 
 
 ]

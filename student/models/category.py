@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Category(models.Model):
@@ -11,7 +12,7 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        db_table = "student_category"
+        db_table = "studentcategory"
         ordering = ["name"]
-        verbose_name = " student category"
-        verbose_name_plural = " student categories"
+        verbose_name = "student category"
+        verbose_name_plural = "student categories"

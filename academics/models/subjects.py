@@ -1,6 +1,8 @@
 from django.db import models
-from subject_group import Subject_Group
-from classes import Classes
+from academics.models.subject_group import Subject_Group
+from .subject_group import Subject_Group
+from .classes import Classes
+from datetime import datetime
 # Create your models here.
 
 

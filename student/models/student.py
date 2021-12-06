@@ -2,11 +2,15 @@ from django.db import models
 from academics.models import(
     classes,
     sections)
-import category
-from employee.models import FEMALE, GENDER, MALE
-from student.models.category import Category
-from constants import constants
+from .category import Category
 
+from constants import constants
+from hostel.models import hostel
+from datetime import datetime
+
+FEMALE = "Female"
+MALE = "Male"
+GENDER = "Gender"
 GENDER = (
     (MALE, "Male"),
     (FEMALE, "Female"),
@@ -44,3 +48,25 @@ class Student(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     religion = models.CharField("Religion",
                                 choices=RELIGION, max_length=10, blank=False, default=constants.CHRISTIAN)
+    mobile_number = models.CharField("Mobile Number",
+                                     max_length=17, null=False, blank=True, unique=True)
+    email = models.EmailField("Email",
+                              null=False, blank=False, unique=True)
+    admission_date = models.DateTimeField(
+        "Admission Date", null=True, blank=True)
+    blood_group = models.CharField("Blood Group",
+                                   max_length=2, blank=True, null=True)
+    hostel = models.ForeignKey(hostel.Hostel, on_delete=models.CASCADE)
+    height = models.IntegerField(blank=True)
+    weight = models.IntegerField(blank=True)
+    medical_history = models.TextField("Medical History",
+                                       max_length=300, null=True, blank=True)
+
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        db_table = "student"
+        ordering = ["admission_no"]
+        verbose_name = "student"
+        verbose_name_plural = "student"
