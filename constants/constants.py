@@ -1,0 +1,6 @@
+MALE = "Male"
+FEMALE = "Female"
+CHRISTIAN = "Christian"
+MUSLIM = "Muslim"
+HINDU = "Hindu"
+OTHER = "Other"
