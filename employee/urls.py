@@ -5,9 +5,9 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 
 router = DefaultRouter()
-router.register("designation", DesignationViewSet, "designations")
-router.register("department", DepartmentViewSet, "departments")
-router.register("role", RoleViewSet, "roles")
+router.register("employee_designation", DesignationViewSet, "designations")
+router.register("employee_department", DepartmentViewSet, "departments")
+router.register("employee_role", RoleViewSet, "roles")
 router.register("employee", EmployeeViewSet, "employees")
 
 
