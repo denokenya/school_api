@@ -1,14 +1,15 @@
 from django.db import models
-from academics.models import(
-    classes,
-    sections)
+from academics.models.classes import Classes
+from academics.models.sections import Section
+
 from .category import Category
 from .guardian import Guardian
 from .parent import Parent
 
 from constants import constants
-from hostel.models import hostel
-from hostel.models import hostel_rooms
+from hostel.models.hostel import Hostel
+from hostel.models.hostel_rooms import Rooms
+
 from datetime import datetime
 
 FEMALE = "Female"
@@ -39,12 +40,12 @@ class Student(models.Model):
     roll_no = models.CharField("Roll No",
                                max_length=50, null=False, blank=False, unique=True)
     student_class = models.ForeignKey(
-        classes.Classes, on_delete=models.CASCADE)
-    section = models.ForeignKey(sections.Section, on_delete=models.CASCADE)
+        Classes, on_delete=models.CASCADE)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE)
     first_name = models.CharField("First Name",
-                                  max_length=60, blank=False, null=False, default='name')
+                                  max_length=60, blank=True, null=True)
     last_name = models.CharField("First Name",
-                                 max_length=60, blank=False, null=False, default='name')
+                                 max_length=60, blank=True, null=True)
     gender = models.CharField("Gender",
                               choices=GENDER, max_length=10, blank=False, default=MALE)
 
@@ -52,16 +53,16 @@ class Student(models.Model):
     religion = models.CharField("Religion",
                                 choices=RELIGION, max_length=10, blank=False, default=constants.CHRISTIAN)
     mobile_number = models.CharField("Mobile Number",
-                                     max_length=17, null=False, blank=True, unique=True)
+                                     max_length=17, null=True, blank=True, unique=True)
     email = models.EmailField("Email",
-                              null=False, blank=False, unique=True)
+                              null=True, blank=True, unique=True)
     admission_date = models.DateTimeField(
         "Admission Date", null=True, blank=True)
     blood_group = models.CharField("Blood Group",
                                    max_length=2, blank=True, null=True)
-    hostel = models.ForeignKey(hostel.Hostel, on_delete=models.CASCADE)
+    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE)
     room_number = models.ForeignKey(
-        hostel_rooms.Rooms, on_delete=models.CASCADE)
+        Rooms, on_delete=models.CASCADE)
     height = models.IntegerField(blank=True)
     weight = models.IntegerField(blank=True)
     medical_history = models.TextField("Medical History",
