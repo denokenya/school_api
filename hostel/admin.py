@@ -11,7 +11,6 @@ class Hostel_Rooms_Admin(admin.ModelAdmin):
     ]
     search_fields = [
 
-
         'room_number',
     ]
     ordering = ['name']
