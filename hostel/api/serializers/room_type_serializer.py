@@ -1,7 +1,7 @@
 from django.db.models import fields
 from rest_framework import serializers
 
-from hostel.models import room_type
+from hostel.models.room_type import Room_Type
 
 
 class Room_Type_Serializer(serializers.ModelSerializer):
@@ -12,8 +12,9 @@ class Room_Type_Serializer(serializers.ModelSerializer):
 
     """
     class Meta:
-        model = room_type.Room_Type
+        model = Room_Type
         fields = [
             'id',
             'name',
         ]
+        read_only_field = ['id']
