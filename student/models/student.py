@@ -3,9 +3,12 @@ from academics.models import(
     classes,
     sections)
 from .category import Category
+from .guardian import Guardian
+from .parent import Parent
 
 from constants import constants
 from hostel.models import hostel
+from hostel.models import hostel_rooms
 from datetime import datetime
 
 FEMALE = "Female"
@@ -57,10 +60,15 @@ class Student(models.Model):
     blood_group = models.CharField("Blood Group",
                                    max_length=2, blank=True, null=True)
     hostel = models.ForeignKey(hostel.Hostel, on_delete=models.CASCADE)
+    room_number = models.ForeignKey(
+        hostel_rooms.Rooms, on_delete=models.CASCADE)
     height = models.IntegerField(blank=True)
     weight = models.IntegerField(blank=True)
     medical_history = models.TextField("Medical History",
                                        max_length=300, null=True, blank=True)
+
+    parent = models.ForeignKey(Parent, on_delete=models.CASCADE)
+    guardian = models.ForeignKey(Guardian, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name

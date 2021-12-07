@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import student, category
+from .models import student, category, parent, guardian
 
 admin.site.register(student.Student)
 admin.site.register(category.Category)
-
-# Register your models here.
+admin.site.register(parent.Parent)
+admin.site.register(guardian.Guardian)

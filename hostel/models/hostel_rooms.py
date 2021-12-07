@@ -7,8 +7,13 @@ class Rooms(models.Model):
     """
         Model containing hostel rooms information
     """
-    name = models.ForeignKey(Hostel, on_delete=models.CASCADE)
-    number_of_rooms = models.IntegerField()
+    name = models.ForeignKey(
+        Hostel, related_name='hostels', on_delete=models.CASCADE)
+    room_number = models.CharField("Room Number",
+                                   max_length=10, null=True, blank=True, unique=True)
+
+    def __str__(self):
+        return self.room_number
 
     class Meta:
         db_table = "hostel-rooms"
