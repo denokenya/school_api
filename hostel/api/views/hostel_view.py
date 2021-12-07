@@ -13,7 +13,7 @@ from mixins .apimixin import DefaultMixin
 
 class Hostel_ViewSet(DefaultMixin, ModelViewSet):
 
-    """Room Type API End points."""
+    """Hostel API End points."""
     queryset = Hostel.objects.all()
     serializer_class = Hostel_Serializer
     search_fields = ('name',)
