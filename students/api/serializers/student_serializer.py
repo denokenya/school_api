@@ -22,12 +22,15 @@ class Student_Serializer(serializers.ModelSerializer):
     # We want to display the hostel's name instead of the id.
     hostel = serializers.SlugRelatedField(
         queryset=Hostel.objects.all(), slug_field='name')
+    # We want to display the hostel room_number name instead of the id.
     room_number = serializers.SlugRelatedField(
         queryset=Rooms.objects.all(), slug_field='name'
     )
+    # We want to display the parents name instead of the id.
     parent = serializers.SlugRelatedField(
         queryset=Parent.objects.all(), slug_field='name'
     )
+    # We want to display the guardian's name instead of the id.
     guardian = serializers.SlugRelatedField(
         queryset=Guardian.objects.all(), slug_field='name'
     )
