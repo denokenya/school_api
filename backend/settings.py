@@ -50,12 +50,13 @@ INSTALLED_APPS = [
     'rest_auth',
 
     # Project apps
+    'students',
     'academics',
     'blog',
     'employee',
     'users',
-    'student',
     'hostel',
+
 
 
 
