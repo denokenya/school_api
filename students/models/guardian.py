@@ -25,7 +25,7 @@ class Guardian(models.Model):
                                          max_length=300, null=True, blank=True)
 
     def __str__(self):
-        return self.father_name
+        return self.name
 
     class Meta:
         db_table = "guardian"

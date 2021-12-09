@@ -13,7 +13,9 @@ from students.models.student import Student
 from mixins .apimixin import DefaultMixin
 
 
-class Student_ViewSet(DefaultMixin, ModelViewSet):
+class Student_ViewSet(ModelViewSet):
+
+    """Student API End points."""
 
     queryset = Student.objects.all()
     serializer_class = Student_Serializer

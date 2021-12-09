@@ -15,5 +15,7 @@ from mixins .apimixin import DefaultMixin
 
 class Guardian_ViewSet(DefaultMixin, ModelViewSet):
 
+    """Guardian API End points."""
+
     queryset = Guardian.objects.all()
     serializer_class = Guardian_Serializer

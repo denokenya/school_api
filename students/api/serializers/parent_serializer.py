@@ -5,6 +5,11 @@ from students.models.parent import Parent
 
 
 class Parent_Serializer(serializers.ModelSerializer):
+    """
+        List information of the Student Parent:
+
+
+    """
 
     class Meta:
         model = Parent

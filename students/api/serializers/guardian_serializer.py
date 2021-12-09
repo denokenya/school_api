@@ -5,6 +5,11 @@ from students.models.guardian import Guardian
 
 
 class Guardian_Serializer(serializers.ModelSerializer):
+    """
+        List information of the Student Guardian
+
+
+    """
 
     class Meta:
         model = Guardian

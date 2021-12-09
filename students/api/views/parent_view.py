@@ -15,5 +15,7 @@ from mixins .apimixin import DefaultMixin
 
 class Parent_ViewSet(DefaultMixin, ModelViewSet):
 
+    """Parent API End points."""
+
     queryset = Parent.objects.all()
     serializer_class = Parent_Serializer
