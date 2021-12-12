@@ -1,2 +1,2 @@
 # school_api
-SChool API developed using Django Rest Framework.
+School API developed using Django Rest Framework.
