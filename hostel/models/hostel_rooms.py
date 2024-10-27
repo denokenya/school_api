@@ -5,7 +5,7 @@ from hostel.models.hostel import Hostel
 
 class Rooms(models.Model):
     """
-        Model containing hostel rooms information
+        The Model containing hostel rooms information
     """
     name = models.ForeignKey(
         Hostel, related_name='hostels', on_delete=models.CASCADE)
